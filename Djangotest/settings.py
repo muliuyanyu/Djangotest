@@ -75,8 +75,14 @@ WSGI_APPLICATION = 'Djangotest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "Djangotest",
+        'USER': 'root',  # 链接的用户名
+        'PASSWORD': '123456',  # 链接的密码
+        'HOST': '47.99.181.65',  # 所在的ip地址
+        'PORT': 3306,
+        'OPTIONS': {'charset': 'utf8mb4', "init_command": "SET foreign_key_checks = 0;"},
+        'CONN_MAX_AGE': 180,
     }
 }
 
